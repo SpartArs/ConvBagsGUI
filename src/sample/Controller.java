@@ -63,6 +63,9 @@ public class Controller {
      */
     @FXML
     private void start(ActionEvent event) {
+        if (mp == null) {
+            return;
+        }
         mp.play();
     }
 
@@ -73,6 +76,9 @@ public class Controller {
      */
     @FXML
     private void pause(ActionEvent event) {
+        if (mp == null) {
+            return;
+        }
         mp.pause();
     }
 
@@ -83,11 +89,17 @@ public class Controller {
      */
     @FXML
     private void stop(ActionEvent event) {
+        if (mp == null) {
+            return;
+        }
         mp.stop();
     }
 
     @FXML
     private void snapshot(ActionEvent event) {
+        if (mp == null) {
+            return;
+        }
         WritableImage image = mediaView.snapshot(null, null);
         screenShoots.add(image);
 
